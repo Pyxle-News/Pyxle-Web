@@ -1,0 +1,274 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+}
+
+:focus,
+:hover {
+  outline: none;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+html {
+  font-size: 14px;
+  line-height: 1.25em;
+}
+
+html.no-scroll {
+  overflow: hidden;
+}
+
+body {
+  font-family: Moderat, Helvetica Neue, HelveticaNeue, Helvetica, Arial,
+    sans-serif;
+  background-color: #f8eee6;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img{
+    position: absolute;
+    width: 15%;
+    margin-left: -2%;
+    margin-top: -2.3%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Moderat, Helvetica Neue, HelveticaNeue, Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25em;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  border: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+header[role="banner"] {
+  position: fixed;
+  margin-left: 8.5%;
+  margin-top: 2% ;
+  z-index: 999;
+  top: 2rem;
+  left: 4rem;
+  right: 4rem;
+  background-color: coral;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+
+}
+
+.banner{
+    border-color: black;
+}
+
+header[role="banner"] .relative-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 1rem;
+  height: 4.25rem;
+}
+
+header[role="banner"] nav {
+  height: 100%;
+  width: calc(100% - 6rem);
+}
+
+header[role="banner"] .navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+header[role="banner"] .navigation li:not(.devenir-membre) a {
+  backface-visibility: hidden;
+  position: relative;
+}
+
+header[role="banner"] .navigation li:not(.devenir-membre) a:before {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  transform: scaleX(0);
+  transition: left;
+  transition: 0.2s linear;
+}
+
+header[role="banner"] .navigation li a {
+  height: 100%;
+  line-height: 4.25rem;
+  display: block;
+  padding: 0 0.5rem;
+}
+
+header[role="banner"] .navigation li.menu-item-has-children a {
+  position: relative;
+  padding-right: 1rem;
+}
+
+header[role="banner"] .navigation li.menu-item-has-children a:after {
+  content: "";
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: relative;
+  top: 0.2rem;
+  left: 1rem;
+  transition: 0.5s ease;
+  transform-origin: 50% 30%;
+}
+
+header[role="banner"] .navigation li.menu-item-has-children .sub-menu {
+  opacity: 0;
+  transform: translateY(2rem);
+  pointer-events: none;
+  position: absolute;
+}
+
+header[role="banner"] .navigation li.menu-item-has-children .sub-menu li:after,
+header[role="banner"]
+  .navigation
+  li.menu-item-has-children
+  .sub-menu
+  li
+  a:after {
+  content: none;
+}
+
+header[role="banner"]
+  .navigation
+  li.menu-item-has-children
+  .sub-menu
+  [class*="text-color-"]
+  a {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  padding: 0.75rem;
+}
+
+header[role="banner"]
+  .navigation
+  li.menu-item-has-children
+  .sub-menu
+  [class*="text-color-"]
+  a:before {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: -0.25rem;
+  height: 0.625rem;
+  top: 0.8em;
+  z-index: -1;
+  background-color: #fff;
+  transform: scaleX(0);
+  transition: 0.3s linear;
+  
+}
+
+header[role="banner"]
+  .navigation
+  li.menu-item-has-children
+  .sub-menu
+  [class*="text-color-"]
+  a:hover {
+  color: #000;
+}
+
+header[role="banner"] .navigation a {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+header[role="banner"] .sub-menu {
+  display: block;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.15);
+  list-style: none;
+  transition: 0.5s ease;
+}
+
+header[role="banner"] .socials {
+  position: relative;
+  right: 0;
+  top: 0;
+  width: 2.75rem;
+  height: 100%;
+  transition: 0.2s linear;
+}
+
+header[role="banner"] .socials a {
+  display: block;
+  height: 100%;
+  padding: 0 1em;
+}
+
+header[role="banner"] .socials:hover {
+  background-color: #008cbe;
+}
