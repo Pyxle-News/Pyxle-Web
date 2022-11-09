@@ -10,38 +10,31 @@
             <div class="relative-wrapper">
               <nav role="navigation">
                 <ul id="main-navigation" class="navigation">
-                  <li class="devenir-membre menu-item sheep-background-color"><a href="#" title="" class="btn-important">Item1</a></li>
-                  <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="#">Item2</a></li>
-                  <li id="menu-item-24" class="menu-item menu-item-type-post_type_archive menu-item-object-member menu-item-24"><a href="#">Item3</a></li>
-                  <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="#">Item4</a></li>
-                  <li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="#">Item5</a></li>
+                  <li class="devenir-membre menu-item sheep-background-color"><a href="#" title="" class="btn-important">Home</a></li>
+                  <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="#signup">Sign Up</a></li>
+                  <li id="menu-item-24" class="menu-item menu-item-type-post_type_archive menu-item-object-member menu-item-24"><a href="#">Latest</a></li>
                 </ul>
               </nav>
             </div>
           </header>
+          <div class="signup">
+            <form name="submit-to-google-sheet">
+              <input id="#signup" name="email" type="email" placeholder="Email" required>
+              <button type="submit">Sign Up</button>
+            </form>
+          </div>
 
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
+
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzyEkW4i5ALtHDeGYHBQi3OvI8QT2jrfq40uhVPxDPKuBt9te6RswKzYI84BZ2Ayjklyw/exec'
+            const form = document.forms['submit-to-google-sheet']
           
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            const firebaseConfig = {
-              apiKey: "AIzaSyBViG_zQCcmUD9YWyshhRc9xCsge02XYsQ",
-              authDomain: "pyxle-news-website.firebaseapp.com",
-              projectId: "pyxle-news-website",
-              storageBucket: "pyxle-news-website.appspot.com",
-              messagingSenderId: "941240789105",
-              appId: "1:941240789105:web:4afaa30b222539c2d8d3d0",
-              measurementId: "G-VMBJFMF16F"
-            };
-          
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const analytics = getAnalytics(app);
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
           </script>
     </body>
 </html>

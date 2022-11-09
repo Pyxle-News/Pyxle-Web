@@ -1,20 +1,8 @@
-*,
-:after,
-:before {
-  box-sizing: border-box;
-}
 
-* {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-backface-visibility: hidden;
-}
 
-:focus,
-:hover {
-  outline: none;
-}
+
+
+
 
 body,
 html {
@@ -63,7 +51,7 @@ body.no-scroll {
 }
 
 img{
-    position: absolute;
+    position: relative;
     width: 15%;
     margin-left: -2%;
     margin-top: -2.3%;
@@ -110,7 +98,7 @@ header[role="banner"] {
 }
 
 .banner{
-    border-color: black;
+    border-color:#000;
 }
 
 header[role="banner"] .relative-wrapper {
@@ -271,4 +259,43 @@ header[role="banner"] .socials a {
 
 header[role="banner"] .socials:hover {
   background-color: #008cbe;
+}
+
+
+
+input{
+  width: 500px;
+  height: 47px;
+  border-radius: 7px;
+  display: flex;
+  border: 3px black;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup{
+
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+}
+
+button {
+  border-radius: 7px;
+  border: black;
+  background-color: coral;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+form{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
