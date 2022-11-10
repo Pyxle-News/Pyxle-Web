@@ -17,8 +17,8 @@
               </nav>
             </div>
           </header>
-          <div class="signup">
-            <form name="submit-to-google-sheet">
+          <div class="signup" id="signup-form" >
+            <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
               <input id="#signup" name="email" type="email" placeholder="Email" required>
               <button type="submit">Sign Up</button>
             </form>
