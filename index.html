@@ -1,42 +1,57 @@
 <html>
-    <head>
-<link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-      <div class="logo">
-        <img src="./logo.svg" alt="">
-      </div>
-        <header class="banner" role="banner">
-            <div class="relative-wrapper">
-              <nav role="navigation">
-                <ul id="main-navigation" class="navigation">
-                  <li class="devenir-membre menu-item sheep-background-color"><a href="#" title="" class="btn-important">Home</a></li>
-                  <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a href="#signup">Sign Up</a></li>
-                  <li id="menu-item-24" class="menu-item menu-item-type-post_type_archive menu-item-object-member menu-item-24"><a href="#">Latest</a></li>
-                </ul>
-              </nav>
-            </div>
-          </header>
-          <div class="signup" id="signup-form" >
-            <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
-              <input id="#signup" name="email" type="email" placeholder="Email" required>
-              <input name="name" type="name" placeholder="Name" required>
-			  <input name="reference code" type="reference code" placeholder="Reference code - leave empty if none.">
-              <button type="submit">Sign Up</button>
-            </form>
-          </div>
+
+<head>
+  <title>Pyxle News</title>
+  <meta name="description" content="A tech news service by 15 year olds.">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
+  <meta name="viewport" content="width=1280, initial-scale=1">
+</head>
+
+<body>
+  <div class="logo">
+    <img src="./logo.svg" alt="">
+  </div>
+  <header class="banner" role="banner">
+    <div class="relative-wrapper">
+      <nav role="navigation">
+        <ul id="main-navigation" class="navigation">
+          <li class="devenir-membre menu-item sheep-background-color"><a href="#" title=""
+              class="btn-important">Home</a></li>
+          <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a
+              href="#signup">Sign Up</a></li>
+          <li id="menu-item-24" class="menu-item menu-item-type-post_type_archive menu-item-object-member menu-item-24">
+            <a href="#">Latest</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="signup" id="signup-form">
+    <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
+      <input id="#signup" name="email" type="email" placeholder="Email" required>
+      <input name="name" type="name" placeholder="Name" required>
+      <input name="reference code" type="reference code" placeholder="Reference code - leave empty if none.">
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
 
 
-          <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzyEkW4i5ALtHDeGYHBQi3OvI8QT2jrfq40uhVPxDPKuBt9te6RswKzYI84BZ2Ayjklyw/exec'
-            const form = document.forms['submit-to-google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => console.log('Success!', response))
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
-    </body>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzyEkW4i5ALtHDeGYHBQi3OvI8QT2jrfq40uhVPxDPKuBt9te6RswKzYI84BZ2Ayjklyw/exec'
+    const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+
+    var siteWidth = 1280;
+    var scale = screen.width / siteWidth;
+
+    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + siteWidth + ', initial-scale=' + scale + '');
+  </script>
+</body>
+
 </html>
