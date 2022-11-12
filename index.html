@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="./main.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
             </ul>
         </div>
 
-        <div class="nav__toggle" id="nav-toggle">
+        <div class="nav__toggle" id="nav-toggle" onclick="showMenu('nav-toggle','nav-menu')">
             <i class='bx bx-grid-alt'></i>
         </div>
 
@@ -54,26 +55,8 @@
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzyEkW4i5ALtHDeGYHBQi3OvI8QT2jrfq40uhVPxDPKuBt9te6RswKzYI84BZ2Ayjklyw/exec'
     const form = document.forms['submit-to-google-sheet']
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-    })
 
-    const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
-    
-    // Validate that variables exist
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            // We add the show-menu class to the div tag with the nav__menu class
-            nav.classList.toggle('show-menu')
-        })
-    }
-}
-showMenu('nav-toggle','nav-menu')
+
   </script>
 </body>
 
