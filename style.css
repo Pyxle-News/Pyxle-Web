@@ -1,11 +1,11 @@
 
 img{
     position: fixed;
-    width: 15%;
-    margin-left: -1%;
-    margin-top: -2%;
-    top: 0;
-    left: 0;
+    width: 5%;
+    display: block;
+    float: left;
+    align-items: center;
+    left: 8%;
 }
 
 
@@ -160,11 +160,11 @@ body.dark-theme {
 
 /*=============== HEADER ===============*/
 .header {
-  width: 85%;
+  width: 96%;
   background-color: var(--header-color);
-  position: fixed;
+  display: block;
+  position: sticky;
   top: 0;
-  right: 0;
   z-index: var(--z-fixed);
   transition: .5s;
   margin: 2%;
@@ -637,7 +637,7 @@ input{
   justify-self: center;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 0%;
 }
 
 button {
