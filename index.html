@@ -5,27 +5,41 @@
   <meta name="description" content="A tech news service by 15 year olds.">
   <link rel="stylesheet" href="./style.css">
   <link rel="shortcut icon" href="./logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <div class="logo">
+  <header class="header" id="header">
     <img src="./logo.svg" alt="">
-  </div>
-  <header class="banner" role="banner">
-    <div class="relative-wrapper">
-      <nav role="navigation">
-        <ul id="main-navigation" class="navigation">
-          <li class="devenir-membre menu-item sheep-background-color"><a href="#" title=""
-              class="btn-important">Home</a></li>
-          <li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17"><a
-              href="#signup">Sign Up</a></li>
-          <li id="menu-item-24" class="menu-item menu-item-type-post_type_archive menu-item-object-member menu-item-24">
-            <a href="#">Latest</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav container">
+        <a href="#" class="nav__logo"> Pyxle News </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="index.html" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="index.html#about" class="nav__link">About us</a>
+                </li>
+                <li class="nav__item">
+                    <a href="navbars.html" class="nav__link active-link">Navbars</a>
+                </li>
+                <li class="nav__item">
+                    <a href="index.html#contact" class="nav__link">Contact us</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-grid-alt'></i>
+        </div>
+
+        <a href="https://github.com/pulkithanda" class="button button__header">Drop a follow</a>
+    </nav>
+</header>
   <div class="signup" id="signup-form">
     <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
       <input id="#signup" name="email" type="email" placeholder="Email" required>
@@ -51,6 +65,19 @@
     var scale = screen.width / siteWidth;
 
     document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + siteWidth + ', initial-scale=' + scale + '');
+    const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
+    
+    // Validate that variables exist
+    if(toggle && nav){
+        toggle.addEventListener('click', ()=>{
+            // We add the show-menu class to the div tag with the nav__menu class
+            nav.classList.toggle('show-menu')
+        })
+    }
+}
+showMenu('nav-toggle','nav-menu')
   </script>
 </body>
 
