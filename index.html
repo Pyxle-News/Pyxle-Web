@@ -34,28 +34,35 @@
             </ul>
         </div>
 
-        <div class="nav__toggle" id="nav-toggle" onclick="showMenu('nav-toggle','nav-menu')">
+        <div class="nav__toggle" id="nav-toggle" onclick="myFunction()">
             <i class='bx bx-grid-alt'></i>
         </div>
 
         <a href="https://github.com/pyxle-news" class="button button__header">Sign Up</a>
     </nav>
 </header>
-<!-- <div class="signup" id="signup-form">
+<div class="signup" id="signup-form">
   <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
     <input id="#signup" name="email" type="email" placeholder="Email" required>
     <input name="name" type="name" placeholder="Name" required>
     <input name="reference code" type="reference code" placeholder="Reference code - leave empty if none.">
     <button type="submit">Sign Up</button>
   </form>
-</div> -->
+</div>
 
 
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzyEkW4i5ALtHDeGYHBQi3OvI8QT2jrfq40uhVPxDPKuBt9te6RswKzYI84BZ2Ayjklyw/exec'
     const form = document.forms['submit-to-google-sheet']
 
-
+    function myFunction() {
+  var x = document.getElementById("nav-menu");
+  if (x.className === "nav__menu") {
+    x.className += " show-menu";
+  } else {
+    x.className = "nav__menu";
+  }
+}
 
   </script>
 </body>
