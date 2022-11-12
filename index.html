@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1280, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -40,7 +40,14 @@
         <a href="https://github.com/pyxle-news" class="button button__header">Sign Up</a>
     </nav>
 </header>
-
+<!-- <div class="signup" id="signup-form">
+  <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
+    <input id="#signup" name="email" type="email" placeholder="Email" required>
+    <input name="name" type="name" placeholder="Name" required>
+    <input name="reference code" type="reference code" placeholder="Reference code - leave empty if none.">
+    <button type="submit">Sign Up</button>
+  </form>
+</div> -->
 
 
   <script>
@@ -54,10 +61,6 @@
         .catch(error => console.error('Error!', error.message))
     })
 
-    var siteWidth = 1280;
-var scale = screen.width /siteWidth;
-
-document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
     const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
