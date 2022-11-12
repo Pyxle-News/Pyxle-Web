@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1180" />
+  <meta name="viewport" content="width=1280, initial-scale=1">
 </head>
 
 <body>
@@ -62,9 +62,9 @@
     })
 
     var siteWidth = 1280;
-    var scale = screen.width / siteWidth;
+var scale = screen.width /siteWidth;
 
-    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=' + siteWidth + ', initial-scale=' + scale + '');
+document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
     const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
