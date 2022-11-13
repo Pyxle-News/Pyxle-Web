@@ -23,6 +23,16 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbywuLlAWki6S53SICEcFAUK328pHGTzV7aJ-PLT_dUdrejOKk8w022eeG98fkuKURz1ug/exec'
+const form = document.forms['submit-to-google-sheet']
+
+    form.addEventListener("submit", e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => console.log('Success!', response))
+    .catch(error => console.error('Error!', error.message))
+})
+
 
   function myFunction() {
     var x = document.getElementById("nav-menu");
