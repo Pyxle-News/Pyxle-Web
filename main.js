@@ -27,6 +27,22 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbywuLlAWki6S53SICEcFA
 const form = document.forms['submit-to-google-sheet']
 
 
+window.addEventListener("load", function() {
+  const form = document.getElementById('my-form');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("Success!");
+    })
+  });
+});
+
   function myFunction() {
     var x = document.getElementById("nav-menu");
     if (x.className === "nav__menu") {
@@ -40,3 +56,6 @@ const form = document.forms['submit-to-google-sheet']
     offset: 50,
     duration: 800
   });
+
+
+
