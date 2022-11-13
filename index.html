@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="./main.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="./main.js"></script>
@@ -14,55 +15,72 @@
 <body>
   <header class="header" id="header">
     <nav class="nav container">
-        <a href="#" class="nav__logo"> Pyxle News </a>
+      <a href="#" class="nav__logo"> Pyxle News </a>
 
-        <div class="nav__menu" id="nav-menu">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="index.html" class="nav__link">Home</a>
-                </li>
-                <li class="nav__item">
-                    <a href="index.html#about" class="nav__link">About us</a>
-                </li>
-                <li class="nav__item">
-                    <a href="navbars.html" class="nav__link active-link">Latest News</a>
-                </li>
-                <li class="nav__item">
-                    <a href="index.html#contact" class="nav__link">Contact us</a>
-                </li>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#about" class="nav__link">About us</a>
+          </li>
+          <li class="nav__item">
+            <a href="navbars.html" class="nav__link active-link">Latest News</a>
+          </li>
+          <li class="nav__item">
+            <a href="index.html#contact" class="nav__link">Contact us</a>
+          </li>
 
-            </ul>
-        </div>
+        </ul>
+      </div>
 
-        <div class="nav__toggle" id="nav-toggle" onclick="myFunction()">
-            <i class='bx bx-grid-alt'></i>
-        </div>
+      <div class="nav__toggle" id="nav-toggle" onclick="myFunction()">
+        <i class='bx bx-grid-alt'></i>
+      </div>
 
-        <a href="https://github.com/pyxle-news" class="button button__header">Sign Up</a>
+      <a href="https://github.com/pyxle-news" class="button button__header">Sign Up</a>
     </nav>
-</header>
-<div class="signup" id="signup-form">
-  <form name="submit-to-google-sheet" onsubmit="document.getElementById('signup-form').style.display='none';">
-    <input id="#signup" name="email" type="email" placeholder="Email" required>
-    <input name="name" type="name" placeholder="Name" required>
-    <input name="reference code" type="reference code" placeholder="Reference code - leave empty if none.">
-    <button type="submit">Sign Up</button>
-  </form>
-</div>
+  </header>
+  <section class="">
+    <div class="container px-6 py-16 mx-auto text-center md:py-20 xl:py-28">
+      <div class="max-w-lg mx-auto md:max-w-2xl xl:max-w-3xl">
+        <h1 class="text-4xl font-bold text-slate-900 dark:text-white md:text-5xl xl:text-6xl">The latest tech news,
+          right to your inbox.</h1>
+        <p class="mt-6 xl:max-w-lg xl:mx-auto">Every Sunday, no spam, no nonsense.</p>
+        <div
+          class="w-full max-w-sm mx-auto mt-6 bg-transparent border rounded-global focus-within:border-blue-400 focus-within:ring focus-within:ring-blue-300 focus-within:ring-opacity-40 dark:border-gray-700 dark:focus-within:border-blue-300 xl:max-w-md xl:border-[0px]">
+          <form name="submit-to-google-sheet" class="bg-white rounded-xl flex flex-col md:flex-row"><input name="email" type="email"
+              class="flex-1 h-10 px-4 py-2 m-1 placeholder-gray-400 bg-transparent border-none appearance-none focus:outline-none focus:placeholder-transparent focus:ring-0"
+              placeholder="Enter email " /><button type="submit" id="xlqaDn"
+              class="h-10 px-4 py-2 m-1 text-white transition-colors duration-200 transform bg-primary-500 rounded-global hover:bg-primary-300 focus:outline-none focus:bg-blue-400 xl:rounded-lg">Sign
+              Up</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzyEkW4i5ALtHDeGYHBQi3OvI8QT2jrfq40uhVPxDPKuBt9te6RswKzYI84BZ2Ayjklyw/exec'
-    const form = document.forms['submit-to-google-sheet']
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbywuLlAWki6S53SICEcFAUK328pHGTzV7aJ-PLT_dUdrejOKk8w022eeG98fkuKURz1ug/exec'
+  const form = document.forms['submit-to-google-sheet']
 
+  form.addEventListener("submit", e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
     function myFunction() {
-  var x = document.getElementById("nav-menu");
-  if (x.className === "nav__menu") {
-    x.className += " show-menu";
-  } else {
-    x.className = "nav__menu";
-  }
-}
+      var x = document.getElementById("nav-menu");
+      if (x.className === "nav__menu") {
+        x.className += " show-menu";
+      } else {
+        x.className = "nav__menu";
+      }
+    }
 
   </script>
 </body>
