@@ -518,15 +518,67 @@
       <h2>Programming News</h2>
       <h4><i>Written by Joel Swedensky</i></h4>
       <p style="text-align: justify;">
-        To clear up any legalities, it is not illegal to build your own hackintosh, although certain
-        parts of the process require utmost care to ensure you stay on the safe side of the law.
-        What is illegal is mass producing hackintoshes and then selling them to unsuspecting
-        customers, as Psystar found out in 2008. They were sued by Apple for $2.7 million for
-        illegally distributing copies of MacOS which they have no right to. Luckily for us, the
-        average hackintosh user has Apple on their side, funnily enough. All the OS images used in
-        today’s hackintoshing era actually come from Apple itself, which ensures that (at least for
-        personal use) there are really nothing to be too worried about.
-      </p> <br>
+        Firstly, programming language updates:
+        <br><br>
+        <a href="https://blog.rust-lang.org/2022/11/03/Rust-1.65.0.html">Rust 1.65.0</a> has been
+        released, bringing much-awaited features such as Generic Associated Types to
+        stabilisation, allowing previously impossible traits such as `LendingIterator` - an
+        `Iterator` that can give out references - to be available. 
+        <br><br>
+        <a href="https://docs.python.org/3/whatsnew/3.11.html">Python 3.11</a> is also here, giving big performance
+        boosts - the standard benchmark suite runs 25% faster (than 3.10). It also has better error
+        messages, including "notes" that can be added to `Exception`s. Finally, it now has support
+        for the `Self` type (inspired by other languages such as rust), to allow you to add type
+        annotations class methods which return...themselves.
+        <br><br>
+        <a href="https://devblogs.microsoft.com/dotnet/welcome-to-csharp-11/">C# 11</a> has come out,
+        with raw/utf8 string literals - and list patterns (in `switch` statements) -
+
+    </p>
+    <p style="text-align: justify;">
+
+        In other news, Github Copilot - the AI tool, powered by <a href="https://openai.com/api/">OpenAI's
+            GPT-3</a> released by Github in October last year - is being
+        <a href="https://githubcopilotlitigation.com/">sued</a>. Since is launch, the self-described "AI pair
+        programmer" has been controversial, as Github trained it on public code across its platform
+        - without, in many repositories, license to do so.
+        > We con­tend that the defen­dants have vio­lated the legal rights of a vast num­ber of
+        cre­ators who posted code or other work under cer­tain open-source licenses on GitHub
+
+    </p>
+    <p style="text-align: justify;">
+
+        Many licenses frequently used in open source projects on Github - such as MIT, GPL, and
+        Apache - require that the author is credited, which of course Copilot never does: it
+        infamously copied the exact source code of <a
+            href="https://www.reddit.com/r/programming/comments/oc9qj1/copilot_regurgitating_quake_code_including_sweary/">Quake
+            III's fast inverse square root
+            function</a>,
+        including comments with swearing. The team has filed a class-action complaint in San
+        Fransissco.
+
+    </p>
+    <p style="text-align: justify;">
+
+        In happier news,<a href="https://learn.microsoft.com/en-gb/windows/wsl/"> Windows Subsystem
+            for Linux</a> has reached version 1.0.0. WSL is a
+        tool from Microsoft that allows you to run Linux on Windows without needing a Virtual
+        Machine. Despite Windows being such a popular operating system, Linux is generally preferred
+        among developers, as it gives more control. WSL lets many developers have the best of both
+        worlds - allowing Linux to be run inside of Windows. <br>
+
+        With the release of v1.0.0, WSL is now officially stable and even more accessible,
+        especially on Windows 11 where it is available in Microsoft Store.
+    </p>
+    <p style="text-align: justify;">
+        <href src="https://thehackernews.com/2022/10/microsoft-confirms-server.html"> Recently linux
+            timestamp 1666666666 was passed just around halloween (coincidence?),
+            Microsoft had a leak of over
+            65000 companies'
+            data</a>, and Google is now writing a new operating system, <a
+                href="https://opensource.googleblog.com/2022/10/announcing-kataos-and-sparrow.html">KataOS</a>,
+            in rust.
+    </p>
     </div>
   </div>
 </body>
