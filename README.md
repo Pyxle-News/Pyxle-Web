@@ -1,2 +1,2 @@
 # Pyxle-Web
-Pyxle Official Website: https://news.pyxle.ml 
+Pyxle Official Website: https://news.pyxle.tech
